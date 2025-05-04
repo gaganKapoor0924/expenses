@@ -48,7 +48,7 @@ const ExpensesList = () => {
             </tr>
           </thead>
           <tbody>
-            {expenses?.length > 0 &&
+            {Array.isArray(expenses) &&
               expenses?.map((exp) => {
                 return (
                   <tr>
