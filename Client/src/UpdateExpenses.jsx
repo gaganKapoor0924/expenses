@@ -15,10 +15,10 @@ const UpdateExpenses = () => {
       .get(`https://expenses-api-six.vercel.app/getExpense/` + id)
       .then((res) => {
         console.log(res);
-        setName(res.data.name);
-        setQuantity(res.data.quantity);
-        setPrice(res.data.price);
-        setDate(res.data.date);
+        setName(res?.data?.name);
+        setQuantity(res?.data?.quantity);
+        setPrice(res?.data?.price);
+        setDate(res?.data?.date);
       })
       .catch((err) => console.log(err));
   }, [id]);
@@ -54,7 +54,7 @@ const UpdateExpenses = () => {
               value={name}
               placeholder="Enter Expense Name"
               className="form-control"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setName(e?.target?.value)}
             />
           </div>
           <div className="mb-2">
@@ -64,7 +64,7 @@ const UpdateExpenses = () => {
               value={quantity}
               placeholder="Enter Quantity"
               className="form-control"
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={(e) => setQuantity(e?.target?.value)}
             />
           </div>
           <div className="mb-2">
@@ -74,7 +74,7 @@ const UpdateExpenses = () => {
               value={price}
               placeholder="Enter Price"
               className="form-control"
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) => setPrice(e?.target?.value)}
             />
           </div>
           <div className="mb-2">
@@ -84,7 +84,7 @@ const UpdateExpenses = () => {
               value={date}
               placeholder="Choose Date"
               className="form-control"
-              onChange={(e) => setDate(e.target.value)}
+              onChange={(e) => setDate(e?.target?.value)}
             />
           </div>
           <button className="btn btn-success">Submit</button>
