@@ -14,7 +14,7 @@ app.use(express.json())
 
 mongoose.connect('mongodb+srv://gagankapoor092485:gagan241985@cluster0.omt0ojj.mongodb.net/expenses?retryWrites=true&w=majority')
 
-app.get("/",(req,res)=>{
+app.get("/api/",(req,res)=>{
   ExpensesModel.find()
   .then(expenses => res.json(expenses))
   .catch(err=> res.json(err))

@@ -7,7 +7,7 @@ const ExpensesList = () => {
 
   useEffect(() => {
     axios
-      .get("https://expenses-api-six.vercel.app")
+      .get("https://expenses-api-six.vercel.app/api/")
       .then((res) => setExpenses(res.data))
       .catch((err) => console.log(err));
   }, []);
