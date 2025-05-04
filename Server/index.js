@@ -20,25 +20,25 @@ app.get("/",(req,res)=>{
   .catch(err=> res.json(err))
 })
 
-app.get("/getExpense/:id", (req, res)=>{
+app.get("/api/getExpense/:id", (req, res)=>{
   const id = req.params.id;
   ExpensesModel.findById({_id:id})
   .then(expenses => res.json(expenses))
   .catch(err=> res.json(err))
 })
-app.put("/updateExpense/:id", (req, res)=>{
+app.put("/api/updateExpense/:id", (req, res)=>{
   const id=req.params.id;
   ExpensesModel.findByIdAndUpdate({_id:id},{name:req.body.name, quantity:req.body.quantity, price:req.body.price, date:req.body.date})
   .then(expenses => res.json(expenses))
   .catch(err=> res.json(err))
 })
-app.post("/addExpense", (req, res)=>{
+app.post("/api/addExpense", (req, res)=>{
   ExpensesModel.create(req.body)
   .then(expenses => res.json(expenses))
   .catch(err=> res.json(err))
 })
 
-app.delete("/deleteExpense/:id",(req, res)=>{
+app.delete("/api/deleteExpense/:id",(req, res)=>{
   const id = req.params.id;
   ExpensesModel.findByIdAndDelete({_id:id})
   .then(expenses => res.json(expenses))
