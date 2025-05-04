@@ -45,6 +45,6 @@ app.delete("/deleteExpense/:id",(req, res)=>{
   .catch(err=> res.json(err))
 })
 
-app.listen(3001, () =>{
+app.listen('https://expenses-api-six.vercel.app/', () =>{
   console.log("Server is running");
 })
