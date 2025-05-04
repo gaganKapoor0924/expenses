@@ -12,7 +12,7 @@ const AddExpenses = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://expenses-api-six.vercel.app/api/addExpense", {
+      .post("https://expenses-backend-sigma.vercel.app/api/addExpense", {
         name,
         quantity,
         price,

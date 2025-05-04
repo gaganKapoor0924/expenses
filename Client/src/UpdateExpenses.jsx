@@ -12,7 +12,7 @@ const UpdateExpenses = () => {
 
   useEffect(() => {
     axios
-      .get(`https://expenses-api-six.vercel.app/api/getExpense/` + id)
+      .get(`https://expenses-backend-sigma.vercel.app/api/getExpense/` + id)
       .then((res) => {
         console.log(res);
         setName(res?.data?.name);
@@ -26,12 +26,15 @@ const UpdateExpenses = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("https://expenses-api-six.vercel.app/api/updateExpense/" + id, {
-        name,
-        quantity,
-        price,
-        date,
-      })
+      .put(
+        "https://expenses-backend-sigma.vercel.app/api/updateExpense/" + id,
+        {
+          name,
+          quantity,
+          price,
+          date,
+        }
+      )
       .then((result) => {
         console.log(result);
         navigate("/");
