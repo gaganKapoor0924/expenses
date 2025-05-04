@@ -4,11 +4,17 @@ const cors = require('cors');
 const ExpensesModel = require('./models/expensesList');
 
 const app = express();
-app.use(cors({
+const corsOptions = {
   origin: 'https://expenses-frontend-smoky.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
-}));
+};
+
+app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options('*', cors(corsOptions));
 app.use(express.json())
 
 
