@@ -5,7 +5,7 @@ const ExpensesModel = require('./models/expensesList');
 
 const app = express();
 app.use(cors({
-  origin: 'https://expenses-frontend-smoky.vercel.app/',  // frontend origin
+  origin: 'https://expenses-frontend-smoky.vercel.app',  // frontend origin
   methods: ['GET', 'POST'],
   credentials: true
 }));
