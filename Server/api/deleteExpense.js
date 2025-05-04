@@ -4,12 +4,13 @@ import ExpensesModel from '../models/expensesList';
 export default async function handler(req, res) {
   await dbConnect();
 
-  if (req.method === 'GET') {
+  if (req.method === 'DELETE') {
+    const { id } = req.query;
     try {
-      const expenses = await ExpensesModel.find();
-      res.status(200).json(expenses);
+      const deleted = await ExpensesModel.findByIdAndDelete(id);
+      res.status(200).json(deleted);
     } catch (err) {
-      res.status(500).json({ error: 'Error fetching expenses' });
+      res.status(500).json({ error: 'Error deleting expense' });
     }
   } else {
     res.status(405).json({ error: 'Method not allowed' });
