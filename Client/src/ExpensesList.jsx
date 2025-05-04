@@ -48,31 +48,32 @@ const ExpensesList = () => {
             </tr>
           </thead>
           <tbody>
-            {expenses?.map((exp) => {
-              return (
-                <tr>
-                  <td>{exp?.name}</td>
-                  <td>{exp?.quantity}</td>
-                  <td>{exp?.price}</td>
-                  <td>{formatDate(exp?.date)}</td>
-                  <td>
-                    <Link
-                      to={`/update/${exp?._id}`}
-                      className="btn btn-primary"
-                    >
-                      Edit
-                    </Link>
-                    <button
-                      className="btn  btn-danger"
-                      onClick={(e) => handleDelete(exp?._id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                  <td>{exp.quantity * exp.price}</td>
-                </tr>
-              );
-            })}
+            {expenses?.length > 0 &&
+              expenses?.map((exp) => {
+                return (
+                  <tr>
+                    <td>{exp?.name}</td>
+                    <td>{exp?.quantity}</td>
+                    <td>{exp?.price}</td>
+                    <td>{formatDate(exp?.date)}</td>
+                    <td>
+                      <Link
+                        to={`/update/${exp?._id}`}
+                        className="btn btn-primary"
+                      >
+                        Edit
+                      </Link>
+                      <button
+                        className="btn  btn-danger"
+                        onClick={(e) => handleDelete(exp?._id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                    <td>{exp.quantity * exp.price}</td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>
