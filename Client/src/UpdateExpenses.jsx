@@ -12,7 +12,7 @@ const UpdateExpenses = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/getExpense/` + id)
+      .get(`https://expenses-api-six.vercel.app/getExpense/` + id)
       .then((res) => {
         console.log(res);
         setName(res.data.name);
@@ -26,7 +26,7 @@ const UpdateExpenses = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3001/updateExpense/" + id, {
+      .put("https://expenses-api-six.vercel.app/updateExpense/" + id, {
         name,
         quantity,
         price,

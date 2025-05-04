@@ -7,7 +7,7 @@ const ExpensesList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/")
+      .get("https://expenses-api-six.vercel.app/")
       .then((res) => setExpenses(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -22,7 +22,7 @@ const ExpensesList = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3001/deleteExpense/" + id)
+      .delete("https://expenses-api-six.vercel.app/deleteExpense/" + id)
       .then((res) => {
         console.log(res);
         window.location.reload();

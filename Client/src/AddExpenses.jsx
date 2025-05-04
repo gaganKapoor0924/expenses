@@ -12,7 +12,7 @@ const AddExpenses = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/addExpense", {
+      .post("https://expenses-api-six.vercel.app/addExpense", {
         name,
         quantity,
         price,
