@@ -48,3 +48,5 @@ app.delete("/api/deleteExpense/:id",(req, res)=>{
 app.listen(3001, () =>{
   console.log("Server is running");
 })
+
+module.exports = app;
